@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wave Animation</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="NavBarStyle.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-left">
+        <a href="#">
+            <img src="vignanLogo.png" alt="Logo" class="logo">
+        </a>
+    </div>
+    <div class="navbar-right">
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+        <div class="hamburger">
+            <!-- Hamburger icon -->
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+</nav>
+
+  <div class="content">
+    <div class="mahotshow-text">
+      <img src="Mahotsav_text.png" class="mahotshow-image"/>
+    </div>
+  </div>
+  <div class="right-side-images-container">
+    <img src="right_clock.png" class="right_side_logo_image_middle_small"/>
+    <button>Login</button>
+    <img src="right_clock.png" class="right_side_logo_image"/>
+  </div>
+  
+  <div class="wave-container">
+    <!-- Ship -->
+    <img src="IMG_1429.PNG" alt="Ship" class="ship">
+
+    <!-- First wave (front wave) -->
+    <img src="IMG_1430.PNG" alt="Wave" class="wave wave-front">
+    <!--three items which will comewith the first  wave and before second wave-->
+    <img src="MIC.png" alt="Item_1" class="item-before-first-wave item1">
+    <img src="Bat.png" alt="Item_2" class="item-before-first-wave item2">
+    <img src="Pencil.png" alt="Item_3" class="item-before-first-wave item3">
+    <img src="football.PNG" alt="Item_4" class="item-before-first-wave item4">
+   
+    <!-- Second wave (middle wave, behind the first one) -->
+    <img src="IMG_1431.PNG" alt="Wave" class="wave wave-middle">
+    <!--three items which will comewith the second  wave and before third wave-->
+    <img src="shoe.png" alt="Item_5" class="item-before-second-wave item5">
+    <img src="Bottle.png" alt="Item_6" class="item-before-second-wave item6">
+    
+
+    <!-- Third wave (back wave, behind the first two) -->
+    <img src="IMG_1432.PNG" alt="Wave" class="wave wave-back">
+     <!--two items which will come after the third wave-->
+     <img src="Muvvalu.png" alt="Item_7" class="item-before-third-wave item7">
+     <img src="Keyboard.png" alt="Item_8" class="item-before-third-wave item8">
+  </div>
+  
+  <script>
+    // Select the hamburger icon and the nav-links
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+// Add a click event to toggle the 'active' class on the nav-links
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+  </script>
+  
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+.navbar {
+    background-color: transparent !important;
+  }
+  
+  .vignanLogo {
+    width: 350px;
+    height: 120px;
+  }
+  
+  /* Adjust font size for various screen sizes */
+  .navbar-nav .nav-link {
+    font-size: 18px;
+    padding: 5px 10px; /* Add padding to create space around the text */
+    position: relative; /* Needed to position the border correctly */
+    transition: all 0.3s ease; /* Smooth transition effect */
+    border: 2px solid transparent; /* Default border, transparent */
+    color: gold !important; /* Gold color on hover */
+  }
+  
+  /* Add the yellow border on hover */
+  .navbar-nav .nav-link:hover {
+    color: orange; /* Change hover text color to orange */
+    border: 2px solid yellow; /* Border becomes yellow on hover */
+    border-radius: 5px; /* Optional: add rounded corners */
+    border-style: dotted;
+  }
+  
+  /* Medium devices (tablets, 768px and up) */
+  @media (min-width: 768px) {
+    .navbar-nav .nav-link {
+        font-size: 20px;
+    }
+  }
+  
+  /* Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) {
+    .navbar-nav .nav-link {
+        font-size: 22px;
+    }
+  }
+  
+  /* Extra large devices (large desktops, 1200px and up) */
+  @media (min-width: 1200px) {
+    .navbar-nav .nav-link {
+        font-size: 24px;
+    }
+  }
+  
+  /* Logo adjustments for smaller screens */
+  @media (max-width: 768px) {
+    .vignanLogo {
+      width: 50vw;
+      height: 50px;
+    }
+  }
+  
+  /*-------------------------------------
+
+  _-------------------*/
+  /* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+}
+
+.navbar-left img {
+  width: 300px;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+/* Navigation links */
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Hamburger icon styling */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 3px 0;
+}
+
+/* Responsive Design */
+/* Hover effect for all views */
+.nav-links li a:hover {
+  color: #61a4b7; /* Change hover text color to orange */
+  border: 2px solid yellow; /* Border becomes yellow on hover */
+  border-radius: 5px; /* Optional: add rounded corners */
+  border-style: dotted;
+}
+ 
+/* Responsive Design */
+@media (max-width: 768px) {
+
+  .navbar-left img {
+    width: 150px;
+  }
+/* Hide the nav links and display the hamburger icon */
+
+.nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px; /* Just below the navbar */
+    right: 0;
+    background-color: transparent;
+    width: 100%;
+}
+
+.nav-links li {
+    margin: 15px 0;
+    text-align: center;
+}
+
+.hamburger {
+    display: flex;
+}
+
+.nav-links.active {
+    display: flex;
+}
+}

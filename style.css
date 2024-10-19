@@ -1,0 +1,612 @@
+/* Ensure the body and content take up the full height */
+body, html {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  background-image: url('IMG_1433.png');
+  background-size: cover;
+  overflow: hidden;
+  box-sizing: border-box;
+  color: gold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navigation Bar Styling */
+nav {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 15vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 10;
+  
+}
+
+nav img {
+  height: 100%;
+}
+
+nav h1 {
+  font-size: 1.5rem;
+  color: gold;
+}
+
+
+@media (max-width: 480px) {
+  .nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+}
+/* Main content adjustments */
+.content {
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  align-items: center;
+  padding-top: 5vh;
+  position: relative;
+}
+
+.mahotshow-text{
+  border-style: dotted;
+  border-width: 1rem;
+}
+.mahotshow-image{
+  width: 50vw;
+  height: 100px;
+}
+/* Styling for the list of categories */
+.content-order-list {
+  padding-top: 2rem;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  color: gold;
+  font-size: 2rem;
+}
+
+.content-order-list p {
+  margin: 0;
+}
+
+.content-order-list span {
+  color: greenyellow;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .content-order-list {
+    flex-wrap: wrap;
+    gap: 5px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-order-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9rem;
+  }
+}
+
+.right-side-images-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Right side clock styling */
+.right_side_logo_image {
+  position: absolute;
+  right: -15%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50vw; /* Set width to 60% of the viewport */
+  height: auto;
+  animation: rotateImage 20s linear infinite;
+}
+
+.right_side_logo_image_middle_small{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50vw; /* Set width to 60% of the viewport */
+  max-width: 600px; /* Set a max width to ensure it doesn't get too large */
+  height: auto;
+  animation: rotateImage 20s linear infinite;
+  text-align: center;
+
+}
+/* Rotate animation */
+@keyframes rotateImage {
+  0% {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .right_side_logo_image {
+    display:block;
+    right: -20%;
+    width: 45vw;
+  }
+  .right_side_logo_image_middle_small{
+    display: none;
+  }
+}
+
+/* @media (min-width: 768px) {
+  .right_side_logo_image {
+    display:block;
+    right: -20%;
+    width: 45vw;
+  }
+  .right_side_logo_image_middle_small{
+    display: none;
+  }
+} */
+@media (max-width: 768px) {
+  .right_side_logo_image {
+   display:none
+  }
+  .right_side_logo_image_middle_small{
+    display:block;
+    
+    top: 60%;
+    /* width: 50vw; Set width to 60% of the viewport */
+    max-width: 400px; /* Set a max width to ensure it doesn't get too large */
+    height: auto;
+  }
+}
+
+
+
+.wave-container {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 20vh; /* Default height */
+  display: flex;
+  justify-content: center;
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Front wave (first wave) */
+.wave-front {
+  z-index: 6; /* Highest z-index to stay in the front */
+  bottom: -5%;
+  animation: float 1.5s ease-in-out infinite; /* Up-down movement */
+}
+
+/* Middle wave (second wave) */
+.wave-middle {
+  z-index: 4; /* Middle z-index to sit behind the first */
+  opacity: 0.8; /* Optional: slight transparency */
+  bottom: -5%; /* Adjust position to create layered effect */
+  animation: float2 2s ease-in-out infinite; /* Up-down movement */
+}
+
+/* Back wave (third wave) */
+.wave-back {
+  z-index: 1; /* Lowest z-index to sit behind the first two */
+  opacity: 0.9; /* Optional: more transparency */
+  bottom: -2%; /* Adjust position to sit even further behind */
+  animation: float3 2.5s ease-in-out infinite; /* Up-down movement */
+}
+
+/* Up-down floating animations */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5px); } /* Upward movement */
+  100% { transform: translateY(0.5); } /* Downward movement */
+}
+
+@keyframes float2 {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5px); } /* Slightly larger upward movement */
+  100% { transform: translateY(0.3); }
+}
+
+@keyframes float3 {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5px); } /* Largest upward movement */
+  100% { transform: translateY(0); }
+}
+
+/* Responsive Design */
+
+/* For small devices (mobile) */
+@media (max-width: 768px) {
+  .wave-container {
+    height: 10vh; /* Smaller height for small screens */
+    width: 100vw;
+  }
+  
+  .wave {
+    height: 100%; /* Smaller waves on mobile */
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); } /* Less vertical movement on small screens */
+    100% { transform: translateY(0); }
+  }
+
+  @keyframes float2 {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+  }
+
+  @keyframes float3 {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+  }
+}
+
+
+
+/* For medium devices (tablets) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .wave-container {
+    height: 15vh; /* Adjust height for tablets */
+    width: 100vw;
+  }
+  
+  .wave {
+    height: 100px; /* Medium-sized waves */
+    width: 100%;
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); } /* Medium movement */
+    100% { transform: translateY(0); }
+  }
+
+  @keyframes float2 {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+  }
+
+  @keyframes float3 {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+  }
+}
+
+/* For large devices (desktops) */
+@media (min-width: 1025px) {
+  .wave-container {
+    height: 20vh; 
+    width: 100vw;
+  }
+
+  .wave {
+    height: 100%; 
+    width: 100%;
+  }
+}
+
+/*------------------------------------- so ship ----------------------------------------*/
+/* Ship styling */
+.ship {
+position: absolute;
+bottom: 0; /* Adjust to place the ship above the waves */
+left: 2%; /* Position the ship on the left side */
+z-index: 3; /* Set a z-index between the second and third waves */
+animation: shipFloat 3s ease-in-out infinite; /* Floating animation */
+width: 30%; /* Relative width for responsive scaling */
+}
+
+/* Floating animation for the ship */
+@keyframes shipFloat {
+0% { transform: translateY(0); }
+50% { transform: translateY(-10px); } /* Upward movement */
+100% { transform: translateY(0); } /* Downward movement */
+}
+
+/* Responsive Design */
+
+/* For small devices (mobile) */
+@media ((max-width: 768px)) {
+.ship {
+  width: 35vw; /* Smaller width for mobile screens */
+  height: 35vh;
+  bottom: -5%; /* Adjust bottom position for mobile */
+}
+}
+
+/* For medium devices (tablets) */
+@media (min-width: 768px) and (max-width: 1024px) {
+.ship {
+  width: 40vw; /* Medium size for tablets */
+  height: 40vh;
+  bottom: -10%; /* Adjust bottom position for tablets */
+}
+}
+
+/* For large devices (desktops) */
+@media (min-width: 1025px) {
+.ship {
+  width: 30vw; /* Default width for large screens */
+  height: 40vh;
+  bottom: 0%; /* Default bottom position */
+}
+}
+
+/*------------------------------this is for all the small items--------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------------------------*/
+/* Basic styling for the items before the first wave */
+.item-before-first-wave {
+position: absolute; /* Position items absolutely within the wave container */
+z-index: 5; /* Place the items in front of the waves */
+filter: blur(0.5px); /* Optional: slight blur effect */
+animation: floatitem 4s ease-in-out infinite; /* Apply animation */
+}
+
+
+
+/* Specific styling for items before the second wave */
+.item-before-second-wave {
+position: absolute; /* Position items absolutely within the wave container */
+z-index: 2; /* Place the items in front of the waves */
+filter: blur(0.5px); /* Optional: slight blur effect */
+animation: floatitem 5s ease-in-out infinite; /* Apply animation with different duration */
+}
+
+
+/* Specific styling for items after the third wave */
+.item-before-third-wave {
+position: absolute; /* Position items absolutely within the wave container */
+z-index: 0; /* Place the items in front of the waves */
+filter: blur(0.5px); /* Optional: slight blur effect */
+animation: floatitem 6s ease-in-out infinite; /* Apply animation with different duration */
+}
+
+
+
+/* Keyframe for float animation (up and down) */
+@keyframes floatitem {
+0%, 100% {
+  transform: translateY(0); /* Start and end at the original position */
+}
+50% {
+  transform: translateY(-10px); /* Move up by 15% at 50% of the animation */
+}
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+.item-before-first-wave,
+.item-before-second-wave,
+.item-before-third-wave {
+height: 40px;
+}
+
+/* Specific positioning for items before the first wave */
+.item1 {
+  left: 30%; 
+ bottom: -25%;
+ 
+}
+
+.item2 {
+ 
+  left: 35%; 
+  width: 90px;
+  bottom: -10%;
+  
+}
+
+.item3 {
+ 
+  left: 70%; 
+  width: 45px;
+  bottom: -7%;
+  
+}
+.item4{
+  left: 90%; 
+  bottom: -10%;
+  
+}
+.item5 {
+  left: 30%; 
+  width: 30px;
+
+ 
+}
+
+.item6 {
+  
+  left: 63%;
+  bottom: 10%; 
+ 
+ 
+}
+
+.item7 {
+  left: 45%; 
+  /* width: 0px; */
+}
+
+.item8 {
+  
+  left: 75%;
+  width: 90px;
+  bottom: 30%; 
+ 
+  
+}
+
+
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+.item-before-first-wave,
+.item-before-second-wave,
+.item-before-third-wave {
+   height: 80px;
+   width: 80px;
+}
+
+/* Specific positioning for items before the first wave */
+.item1 {
+  left: 30%; 
+ bottom: -30%;
+ 
+}
+
+.item2 {
+ 
+  left: 38%; 
+  width: 110px;
+  bottom: -13%;
+  
+}
+
+.item3 {
+ 
+  left: 70%; 
+  width: 45px;
+  bottom: -15%;
+  
+}
+.item4{
+  left: 90%; 
+  bottom: -15%;
+  
+}
+.item5 {
+  left: 35%; 
+bottom: 10%;
+ 
+}
+
+.item6 {
+  
+  left: 63%;
+  bottom: 10%; 
+ 
+ 
+}
+
+.item7 {
+  left: 48%; 
+  width: 70px;
+  bottom: 1%;
+}
+
+.item8 {
+  
+  left: 75%;
+  width: 90px;
+  bottom: 20%; 
+ 
+  
+}
+
+
+}
+
+
+
+@media (min-width: 1025px) {
+.item-before-first-wave,
+.item-before-second-wave,
+.item-before-third-wave {
+    height: 10vh; 
+}
+.item1 {
+  left: 30%; 
+ bottom: -30%;
+ 
+}
+
+.item2 {
+ 
+  left: 40%; 
+  width: 150px;
+  bottom: -10%;
+  
+}
+
+.item3 {
+ 
+  left: 70%; 
+  width: 45px;
+  bottom: -15%;
+  
+}
+.item4{
+  left: 90%; 
+  bottom: -15%;
+  
+}
+.item5 {
+  left: 30%; 
+  width: 90px;
+bottom: 30%;
+ 
+}
+
+.item6 {
+  
+  left: 63%;
+
+  width: 90px;
+  bottom: 10%; 
+ 
+ 
+}
+
+.item7 {
+  left: 48%; 
+  width: 90px;
+  bottom: 40%;
+}
+
+.item8 {
+  
+  left: 75%;
+  width: 150px;
+  bottom: 20%; 
+ 
+  
+}
+
+
+}
+
